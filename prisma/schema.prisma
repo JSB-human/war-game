@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model sig_data {
+  ctprvn_code  String? @db.VarChar(2)
+  sigungu_code String  @id(map: "sig_data_pk") @db.VarChar(5)
+  sigungu_en   String? @db.VarChar(50)
+  sigungu_ko   String? @db.VarChar(50)
+  geom         String?
+  king         String? @db.VarChar(50)
+  king_title   String? @db.VarChar(50)
+  king_img     String? @db.VarChar(128)
+  flower       String? @db.VarChar(50)
+  animal       String? @db.VarChar(50)
+  tree         String? @db.VarChar(50)
+  population   Int?
+  carea        String? @db.VarChar(50)
+  ci_logo_url  String? @db.VarChar(128)
+}
