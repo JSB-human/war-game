@@ -23,3 +23,23 @@ model sig_data {
   carea        String? @db.VarChar(50)
   ci_logo_url  String? @db.VarChar(128)
 }
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model sig_data_bak {
+  ctprvn_code  String? @db.VarChar(2)
+  sigungu_code String? @db.VarChar(5)
+  sigungu_en   String? @db.VarChar(50)
+  sigungu_ko   String? @db.VarChar(50)
+  geom         String?
+  king         String? @db.VarChar(50)
+  king_title   String? @db.VarChar(50)
+  king_img     String? @db.VarChar(128)
+  flower       String? @db.VarChar(50)
+  animal       String? @db.VarChar(50)
+  tree         String? @db.VarChar(50)
+  population   Int?
+  carea        String? @db.VarChar(50)
+  ci_logo_url  String? @db.VarChar(128)
+
+  @@ignore
+}
